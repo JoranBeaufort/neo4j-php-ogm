@@ -133,6 +133,15 @@ use GraphAware\Neo4j\OGM\EntityManager;
 $manager = EntityManager::create('http://localhost:7474');
 ```
 
+If you are using authentication in your Neo4j setup, you can easily pass along the authentication information in the URL.The username and password are extracted with ´parse_url´ and provided as connection parameters:
+
+```php
+use GraphAware\Neo4j\OGM\EntityManager;
+
+$manager = EntityManager::create('http://neo4j:password@localhost:7474');
+```
+
+
 #### Repository
 
 Finding nodes from the database is done via their repository, retrieving the corresponding repository is done by passing the
